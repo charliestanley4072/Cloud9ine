@@ -1,4 +1,4 @@
-const contentArea = document.getElementById('content-area');
+const weatherInfo = document.getElementById('weather-info');
 
 const params = new URLSearchParams(window.location.search);
 const place = params.get('place');
@@ -15,6 +15,6 @@ const titles = {
 	Cardiff: 'Weather - Cardiff'
 };
 
-contentArea.innerHTML = locations[place] || '<p>No location selected.</p>';
+weatherInfo.innerHTML = locations[place] || '<p>No location selected.</p>';
 document.title = titles[place];
 

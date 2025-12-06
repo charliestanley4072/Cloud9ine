@@ -29,7 +29,6 @@ html, body {
 	justify-content: center;
 	align-items: center; /*centres content on cross axis (vertical here)*/
 	background: white;
-	overflow: hidden;
 }
 
 #logo {
@@ -53,11 +52,49 @@ html, body {
 	align-items: center;
 }
 
-.buttons {
+#searchBarContainer {
 	display: flex;
 	gap: 10px;
 	margin-left: auto;
 	margin-right: 25px;
+	position: relative;
+}
+
+#searchBar {
+	width: 250px;
+	margin-right: 20px;
+	position: relative;
+}
+
+#search {
+	padding:8px;
+	border-radius: 20px;
+	width: 250px;
+}
+
+#search-icon {
+	margin-right: -8px;
+}
+
+#suggestions {
+	background: lightsteelblue;
+	border-radius: 6px;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 108%;
+	z-index: 5;
+	max-height: 200px;
+	overflow-y: auto;
+}
+
+.suggestion {
+	padding: 8px;
+	cursor: pointer;
+}
+
+.suggestion:hover {
+	background: #7393B3;
 }
 
 .spacer { /*sets the height and width of spacer (an empty container from html file), creating a blank section to be copy-pasted*/
@@ -157,14 +194,55 @@ html, body {
 	top: 76%;
 	left: 46%;
 }
-#hoverBox-Exeter {
-	top: 84%;
-	left: 44%;
+#hoverBox-Plymouth {
+	top: 86.3%;
+	left: 34.75%;
 }
 #hoverBox-Leeds {
+	top: 56%;
+	left: 67.5%;
+}
+#hoverBox-Norwich {
+	top: 67.7%;
+	left: 97.25%;
+}
+#hoverBox-Hull {
 	top: 59%;
 	left: 74.5%;
 }
+#hoverBox-Belfast {
+	top: 59%;
+	left: 74.5%;
+}
+#hoverBox-Aberdeen {
+	top: 59%;
+	left: 74.5%;
+}
+#hoverBox-Inverness {
+	top: 59%;
+	left: 74.5%;
+}
+#hoverBox-Stornoway {
+	top: 59%;
+	left: 74.5%;
+}
+#hoverBox-Newcastle {
+	top: 59%;
+	left: 74.5%;
+}
+#hoverBox-Liverpool {
+	top: 59%;
+	left: 74.5%;
+}
+#hoverBox-Birmingham {
+	top: 59%;
+	left: 74.5%;
+}
+#hoverBox-Glasgow {
+	top: 59%;
+	left: 74.5%;
+}
+
 
 #pin-London {
 	top: 620px;
@@ -182,14 +260,56 @@ html, body {
 	top: 612px;
 	left: 355px;
 }
-#pin-Exeter {
-	top: 675px;
-	left: 340px;
+#pin-Plymouth {
+	top: 695px;
+	left: 305px;
 }
 #pin-Leeds {
 	top: 480px;
 	left: 420px;
 }
+#pin-Norwich {
+	top: 546px;
+	left: 560px;
+}
+#pin-Hull {
+	top: 480px;
+	left: 420px;
+}
+#pin-Belfast {
+	top: 480px;
+	left: 420px;
+}
+#pin-Aberdeen {
+	top: 480px;
+	left: 420px;
+}
+#pin-Inverness {
+	top: 480px;
+	left: 420px;
+}
+#pin-Stornoway {
+	top: 480px;
+	left: 420px;
+}
+#pin-Newcastle {
+	top: 480px;
+	left: 420px;
+}
+#pin-Liverpool {
+	top: 480px;
+	left: 420px;
+}
+#pin-Birmingham {
+	top: 480px;
+	left: 420px;
+}
+#pin-Glasgow {
+	top: 480px;
+	left: 420px;
+}
+
+
 
 .hoverBox:hover {
 	text-decoration: underline;
@@ -198,6 +318,7 @@ html, body {
 #back-btn1 {
 	position: absolute;
 	bottom: 30px;
+	margin-left: 10px;
 }
 
 /*#mainButtonContainer {

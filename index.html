@@ -5,17 +5,16 @@
 	<title>Cloud9ine - Home Page</title>
 	<link rel="icon" type="image/x-icon" href="images/Cloud9ine-favicon.png">
 	<link rel="stylesheet" href="css/style.css">
+
 </head>
 	
 <body>
 	
 	<header>
 		
-		
 	</header>
 		
 	<main>
-
 			<div id="mainButtonContainer">
 				<a href="index.html" id="logo">
 					<div id="logo" style="cursor:pointer;">
@@ -23,10 +22,13 @@
 						<img id="Cloud9ine-logo" src="images/Cloud9ine-logo.png">
 					</div>
 				</a>
-				<div class="buttons">
-					<button>Button1</button>
-					<button>Button2</button>
-				</div>
+					<div id="searchBarContainer">
+						<img src="images/search-icon.png" width="35px" id="search-icon">
+						<div id="searchBar">
+							<input type="text" id="search" placeholder="Search location..." oninput="showSuggestions()">
+							<div id="suggestions"></div>
+						</div>
+					</div>
 			</div>
 		
 		<h1 id="weather" align="center"><u>Weather</u></h1><br>
@@ -51,7 +53,9 @@
 					</div>
 				</div>
 				<div class="cityName">
-					<div id="hoverBox-Bristol" class="hoverBox">Bristol</div>
+					<a href="location.html?place=Bristol">
+						<div id="hoverBox-Bristol" class="hoverBox">Bristol</div>
+					</a>
 					<div id="pin-Bristol" class="pin-ring">
 						<div class="pin-circle"></div>
 					</div>
@@ -65,14 +69,98 @@
 					</div>
 				</div>
 				<div class="cityName">
-					<div id="hoverBox-Exeter" class="hoverBox">Exeter</div>
-					<div id="pin-Exeter" class="pin-ring">
+					<a href="location.html?place=Plymouth">
+						<div id="hoverBox-Plymouth" class="hoverBox">Plymouth</div>
+					</a>
+					<div id="pin-Plymouth" class="pin-ring">
 						<div class="pin-circle"></div>
 					</div>
 				</div>
 				<div class="cityName">
-					<div id="hoverBox-Leeds" class="hoverBox">Leeds</div>
+					<a href="location.html?place=Leeds">
+						<div id="hoverBox-Leeds" class="hoverBox">Leeds</div>
+					</a>
 					<div id="pin-Leeds" class="pin-ring">
+						<div class="pin-circle"></div>
+					</div>
+				</div>
+				<div class="cityName">
+					<a href="location.html?place=Norwich">
+						<div id="hoverBox-Norwich" class="hoverBox">Norwich</div>
+					</a>
+					<div id="pin-Norwich" class="pin-ring">
+						<div class="pin-circle"></div>
+					</div>
+				</div>
+				<div class="cityName">
+					<a href="location.html?place=Hull">
+						<div id="hoverBox-Hull" class="hoverBox">Hull</div>
+					</a>
+					<div id="pin-Hull" class="pin-ring">
+						<div class="pin-circle"></div>
+					</div>
+				</div>
+				<div class="cityName">
+					<a href="location.html?place=Belfast">
+						<div id="hoverBox-Belfast" class="hoverBox">Belfast</div>
+					</a>
+					<div id="pin-Belfast" class="pin-ring">
+						<div class="pin-circle"></div>
+					</div>
+				</div>
+				<div class="cityName">
+					<a href="location.html?place=Aberdeen">
+						<div id="hoverBox-Aberdeen" class="hoverBox">Aberdeen</div>
+					</a>
+					<div id="pin-Aberdeen" class="pin-ring">
+						<div class="pin-circle"></div>
+					</div>
+				</div>
+				<div class="cityName">
+					<a href="location.html?place=Inverness">
+						<div id="hoverBox-Inverness" class="hoverBox">Inverness</div>
+					</a>
+					<div id="pin-Inverness" class="pin-ring">
+						<div class="pin-circle"></div>
+					</div>
+				</div>
+				<div class="cityName">
+					<a href="location.html?place=Stornoway">
+						<div id="hoverBox-Stornoway" class="hoverBox">Stornoway</div>
+					</a>
+					<div id="pin-Stornoway" class="pin-ring">
+						<div class="pin-circle"></div>
+					</div>
+				</div>
+				<div class="cityName">
+					<a href="location.html?place=Newcastle">
+						<div id="hoverBox-Newcastle" class="hoverBox">Newcastle</div>
+					</a>
+					<div id="pin-Newcastle" class="pin-ring">
+						<div class="pin-circle"></div>
+					</div>
+				</div>
+				<div class="cityName">
+					<a href="location.html?place=Liverpool">
+						<div id="hoverBox-Liverpool" class="hoverBox">Liverpool</div>
+					</a>
+					<div id="pin-Liverpool" class="pin-ring">
+						<div class="pin-circle"></div>
+					</div>
+				</div>
+				<div class="cityName">
+					<a href="location.html?place=Birmingham">
+						<div id="hoverBox-Birmingham" class="hoverBox">Birmingham</div>
+					</a>
+					<div id="pin-Birmingham" class="pin-ring">
+						<div class="pin-circle"></div>
+					</div>
+				</div>
+				<div class="cityName">
+					<a href="location.html?place=Glasgow">
+						<div id="hoverBox-Glasgow" class="hoverBox">Glasgow</div>
+					</a>
+					<div id="pin-Glasgow" class="pin-ring">
 						<div class="pin-circle"></div>
 					</div>
 				</div>
@@ -113,9 +201,7 @@
 
 	</main>
 
-
-
-
+	<script src="js/weather.js"></script>
 </body>
 
 

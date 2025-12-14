@@ -2,6 +2,7 @@ body {
 	background: #0CC6C6;
 	color: black;
 	margin: 0;
+	transition: background-color 1.5s ease, color 2s ease;
 }
 
 html, body {
@@ -11,7 +12,8 @@ html, body {
 #weather { /*'#' targets anything with the id specified after*/
 	font-weight: 600; /*font-weight and font-size change thickness and size of letters*/
 	font-size: 100px;
-	margin: 0; /*removes automatic margin that causes unnecessary empty space below*/
+	margin: 0 auto; /*removes automatic margin that causes unnecessary empty space below*/
+	width: fit-content;
 }
 
 #byCharlieStanley {
@@ -29,6 +31,20 @@ html, body {
 	justify-content: center;
 	align-items: center; /*centres content on cross axis (vertical here)*/
 	background: white;
+	z-index: 3;
+}
+
+#bottom-section {
+	border-top: 1px solid black;
+	width: 100vw; 
+	height: 20vh;
+	gap: 20px;
+	margin-top: 8px;
+	display: flex; 
+	justify-content: center;
+	align-items: flex-end;
+	background: lightsteelblue;
+	float: bottom;
 }
 
 #logo {
@@ -89,12 +105,25 @@ html, body {
 }
 
 .suggestion {
-	padding: 8px;
+	display: flex;           /* arrange children horizontally */
+	align-items: center;     /* vertical alignment */
+	justify-content: space-between;  /* push text left, image right */
+	padding: 6px 10px;
 	cursor: pointer;
+	border-radius: 5px;
+	transition: background 0.15s;
 }
 
 .suggestion:hover {
 	background: #7393B3;
+}
+
+.suggestion-image {
+	width: 24px;
+	height: 24px;
+	object-fit: cover;
+	border-radius: 4px;
+	margin-left: 8px; /* small space from the text */
 }
 
 .spacer { /*sets the height and width of spacer (an empty container from html file), creating a blank section to be copy-pasted*/
@@ -166,7 +195,7 @@ html, body {
 #map-image-container {
 	width: 600px;
 	position: relative;
-	margin: 0;
+	margin: 0 auto;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -335,4 +364,109 @@ html, body {
 
 #weather-info {
 	text-indent: 50px;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin-top: 0.5vw;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #6DE2F7;
+}
+
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+#toggle-1-area{
+	transform: translateX(95.5vw);
+}
+
+#toggle-word-1 {
+	position: relative;
+	margin-bottom: 0;
+	transform: translateX(-0.5vw);
+		
+}
+
+body.dark-mode {
+	background-color: #2F3636;
+	color: white;
+}
+
+body.dark-mode #bottom-section {
+	background-color: #000000;
+	color: white;
+}
+
+#rain-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* rain doesn't block clicks */
+  z-index: 9999;
+}
+
+.drop {
+  position: absolute;
+  width: 4px;
+  height: 35px;
+  background: #BFD6D6;
+  bottom: 100%;
+  animation: fall linear infinite;
+  border-radius: 6px;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(120vh);
+  }
 }

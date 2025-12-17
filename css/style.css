@@ -208,7 +208,7 @@ html, body {
 }
 
 #hoverBox-London {
-	top: 77%;
+	top: 76.5%;
 	left: 86%;
 }
 #hoverBox-Edinburgh {
@@ -217,7 +217,7 @@ html, body {
 }
 #hoverBox-Bristol {
 	top: 80%;
-	left: 58%;
+	left: 65%;
 }
 #hoverBox-Cardiff {
 	top: 76%;
@@ -229,47 +229,84 @@ html, body {
 }
 #hoverBox-Leeds {
 	top: 56%;
-	left: 67.5%;
+	left: 62%;
 }
 #hoverBox-Norwich {
 	top: 67.7%;
 	left: 97.25%;
 }
 #hoverBox-Hull {
-	top: 59%;
-	left: 74.5%;
+	top: 58.8%;
+	left: 83%;
 }
 #hoverBox-Belfast {
-	top: 59%;
-	left: 74.5%;
+	top: 51.8%;
+	left: 22%;
 }
 #hoverBox-Aberdeen {
-	top: 59%;
-	left: 74.5%;
+	top: 29.5%;
+	left: 71%;
 }
 #hoverBox-Inverness {
-	top: 59%;
-	left: 74.5%;
+	top: 226px;
+	left: 187px;
 }
 #hoverBox-Stornoway {
-	top: 59%;
-	left: 74.5%;
+	top: 22.1%;
+	left: 16.2%;
 }
 #hoverBox-Newcastle {
-	top: 59%;
-	left: 74.5%;
+	top: 48.85%;
+	left: 73%;
 }
 #hoverBox-Liverpool {
-	top: 59%;
-	left: 74.5%;
+	top: 64%;
+	left: 46.5%;
 }
 #hoverBox-Birmingham {
-	top: 59%;
-	left: 74.5%;
+	top: 70.4%;
+	left: 47.7%;
 }
 #hoverBox-Glasgow {
-	top: 59%;
-	left: 74.5%;
+	top: 42.1%;
+	left: 34.75%;
+}
+#hoverBox-IsleMan {
+	top: 58%;
+	left: 36%;
+}
+#hoverBox-Shetland {
+	top: 4.1%;
+	left: 77%;
+}
+#hoverBox-Cambridge {
+	top: 71.5%;
+	left: 89%;
+}
+#hoverBox-Cork {
+	top: 72.25%;
+	left: 6%;
+}
+#hoverBox-Dublin {
+	top: 64.25%;
+	left: 21.25%;
+}
+#hoverBox-Nottingham {
+	top: 64%;
+	left: 80%;
+}
+#hoverBox-Dover {
+	top: 83.3%;
+	left: 92%;
+}
+#hoverBox-North-sea {
+	top: 30%;
+	left: 85%;
+	opacity: 50%;
+	background-color: transparent;
+	color: #0C88C7;
+	cursor: default;
+	text-decoration: none;
 }
 
 
@@ -302,42 +339,69 @@ html, body {
 	left: 560px;
 }
 #pin-Hull {
-	top: 480px;
-	left: 420px;
+	top: 59.5%;
+	left: 79%;
 }
 #pin-Belfast {
-	top: 480px;
-	left: 420px;
+	top: 52.5%;
+	left: 35.5%;
 }
 #pin-Aberdeen {
-	top: 480px;
-	left: 420px;
+	top: 30%;
+	left: 67%;
 }
 #pin-Inverness {
-	top: 480px;
-	left: 420px;
+	top: 230px;
+	left: 284px;
 }
 #pin-Stornoway {
-	top: 480px;
-	left: 420px;
+	top: 22.6%;
+	left: 33.5%;
 }
 #pin-Newcastle {
-	top: 480px;
-	left: 420px;
+	top: 49.5%;
+	left: 69%;
 }
 #pin-Liverpool {
-	top: 480px;
-	left: 420px;
+	top: 64.5%;
+	left: 63%;
 }
 #pin-Birmingham {
-	top: 480px;
-	left: 420px;
+	top: 71%;
+	left: 67%;
 }
 #pin-Glasgow {
-	top: 480px;
-	left: 420px;
+	top: 43%;
+	left: 50%;
 }
-
+#pin-IsleMan {
+	top: 55.2%;
+	left: 48.2%;
+}
+#pin-Shetland {
+	top: 4.75%;
+	left: 73.2%;
+}
+#pin-Cambridge {
+	top: 71.5%;
+	left: 85%;
+}
+#pin-Cork {
+	top: 73%;
+	left: 17%;
+}
+#pin-Dublin {
+	top: 65%;
+	left: 34.5%;
+}
+#pin-Nottingham {
+	top: 65.5%;
+	left: 76%;
+}
+#pin-Dover {
+	top: 80.5%;
+	left: 92.5%;
+}
 
 
 .hoverBox:hover {

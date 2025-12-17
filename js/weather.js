@@ -13,7 +13,25 @@ const locations = {
     Cardiff: '<h2>Cardiff</h2><p>Weather in Cardiff:</p>',
     Leeds: '<h2>Leeds</h2><p>Weather in Leeds:</p>',
     Bristol: '<h2>Bristol</h2><p>Weather in Bristol:</p>',
-    Plymouth: '<h2>Plymouth</h2><p>Weather in Plymouth:</p>'
+    Plymouth: '<h2>Plymouth</h2><p>Weather in Plymouth:</p>',
+	Shetland: '<h2>Shetland</h2><p>Weather in Shetland:</p>',
+	Stornoway: '<h2>Stornoway</h2><p>Weather in Stornoway:</p>',
+	Aberdeen: '<h2>Aberdeen</h2><p>Weather in Aberdeen:</p>',
+	Glasgow: '<h2>Glasgow</h2><p>Weather in Shetland:</p>',
+	Inverness: '<h2>Inverness</h2><p>Weather in Inverness:</p>',
+	Newcastle: '<h2>Newcastle</h2><p>Weather in Newcastle:</p>',
+	Belfast: '<h2>Belfast</h2><p>Weather in Belfast:</p>',
+	Hull: '<h2>Hull</h2><p>Weather in Hull:</p>',
+	Dublin: '<h2>Dublin</h2><p>Weather in Dublin:</p>',
+	Cork: '<h2>Cork</h2><p>Weather in Cork:</p>',
+	Liverpool: '<h2>Liverpool</h2><p>Weather in Liverpool:</p>',
+	IsleMan: '<h2>Isle of Man</h2><p>Weather in the Isle of Man:</p>',
+	Shetland: '<h2>Shetland</h2><p>Weather in Shetland:</p>',
+	Shetland: '<h2>Shetland</h2><p>Weather in Shetland:</p>',
+	Shetland: '<h2>Shetland</h2><p>Weather in Shetland:</p>',
+	Shetland: '<h2>Shetland</h2><p>Weather in Shetland:</p>',
+	Shetland: '<h2>Shetland</h2><p>Weather in Shetland:</p>',
+	Shetland: '<h2>Shetland</h2><p>Weather in Shetland:</p>'
 };
 
 

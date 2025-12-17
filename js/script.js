@@ -15,7 +15,19 @@ function showSuggestions() {
         Cardiff: "images/cardiff.png",
         Leeds: "images/leeds.png",
         Bristol: "images/bristol.png",
-        Plymouth: "images/plymouth.png"
+        Plymouth: "images/plymouth.png",
+		Shetland: "images/shetland.png",
+		Stornoway: '<h2>Stornoway</h2><p>Weather in Stornoway:</p>',
+		Aberdeen: '<h2>Aberdeen</h2><p>Weather in Aberdeen:</p>',
+		Glasgow: '<h2>Glasgow</h2><p>Weather in Shetland:</p>',
+		Inverness: '<h2>Inverness</h2><p>Weather in Inverness:</p>',
+		Newcastle: '<h2>Newcastle</h2><p>Weather in Newcastle:</p>',
+		Belfast: '<h2>Belfast</h2><p>Weather in Belfast:</p>',
+		Hull: '<h2>Hull</h2><p>Weather in Hull:</p>',
+		Dublin: '<h2>Dublin</h2><p>Weather in Dublin:</p>',
+		Cork: '<h2>Cork</h2><p>Weather in Cork:</p>',
+		Liverpool: '<h2>Liverpool</h2><p>Weather in Liverpool:</p>',
+		IsleMan: '<h2>Isle of Man</h2><p>Weather in the Isle of Man:</p>'
     };
 
     const matches = Object.keys(locations).filter(loc =>

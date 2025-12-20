@@ -69,3 +69,43 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.toggle('dark-mode', toggle.checked);
     });
 });
+
+const previewContainer = document.getElementById('preview-container');
+const preview = document.getElementById('preview');
+const locations = document.querySelectorAll('.hoverBox');
+
+const images = {
+    London: 'images/london.png',
+    Edinburgh: 'images/edinburgh.png',
+    Cardiff: 'images/cardiff.png',
+    Leeds: 'images/leeds.png',
+    Bristol: 'images/bristol.png',
+    Plymouth: 'images/plymouth.png',
+    Belfast: 'images/belfast.png',
+    Glasgow: 'images/glasgow.png',
+    Inverness: 'images/inverness.png',
+    Liverpool: 'images/liverpool.png',
+    Birmingham: 'images/birmingham.png',
+    Cork: 'images/cork.png',
+    Dublin: 'images/dublin.png',
+    Newcastle: 'images/newcastle.png',
+    Hull: 'images/hull.png',
+    Cambridge: 'images/cambridge.png',
+    Lerwick: 'images/lerwick.png',
+    Stornoway: 'images/stornoway.png',
+    IsleMan: 'images/isleman.png',
+    Nottingham: 'images/nottingham.png',
+    Dover: 'images/dover.png'
+};
+
+locations.forEach(box => {
+    box.addEventListener('mouseenter', () => {
+        const name = box.textContent.trim();
+        if (images[name]) preview.src = images[name];
+        previewContainer.style.display = 'block';
+    });
+
+    box.addEventListener('mouseleave', () => {
+        previewContainer.style.display = 'none';
+    });
+});

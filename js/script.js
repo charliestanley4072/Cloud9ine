@@ -10,26 +10,31 @@ function showSuggestions() {
     if (!input) return;
 
     const locations = {
-        London: "images/london.png",
-        Edinburgh: "images/edinburgh.png",
-        Cardiff: "images/cardiff.png",
-        Leeds: "images/leeds.png",
-        Bristol: "images/bristol.png",
-        Plymouth: "images/plymouth.png",
-		Shetland: "images/shetland.png",
-		Stornoway: '<h2>Stornoway</h2><p>Weather in Stornoway:</p>',
-		Aberdeen: '<h2>Aberdeen</h2><p>Weather in Aberdeen:</p>',
-		Glasgow: '<h2>Glasgow</h2><p>Weather in Shetland:</p>',
-		Inverness: '<h2>Inverness</h2><p>Weather in Inverness:</p>',
-		Newcastle: '<h2>Newcastle</h2><p>Weather in Newcastle:</p>',
-		Belfast: '<h2>Belfast</h2><p>Weather in Belfast:</p>',
-		Hull: '<h2>Hull</h2><p>Weather in Hull:</p>',
-		Dublin: '<h2>Dublin</h2><p>Weather in Dublin:</p>',
-		Cork: '<h2>Cork</h2><p>Weather in Cork:</p>',
-		Liverpool: '<h2>Liverpool</h2><p>Weather in Liverpool:</p>',
-		IsleMan: '<h2>Isle of Man</h2><p>Weather in the Isle of Man:</p>'
+        london: "images/london-thumbnail.png",
+        edinburgh: "images/edinburgh-thumbnail.png",
+        cardiff: "images/cardiff-thumbnail.png",
+        leeds: "images/leeds-thumbnail.png",
+        bristol: "images/bristol-thumbnail.png",
+        plymouth: "images/plymouth-thumbnail.png",
+        lerwick: "images/lerwick-thumbnail.png",
+        stornoway: "images/stornoway-thumbnail.png",
+        aberdeen: "images/aberdeen-thumbnail.png",
+        glasgow: "images/glasgow-thumbnail.png",
+        inverness: "images/inverness-thumbnail.png",
+        newcastle: "images/newcastle-thumbnail.png",
+        belfast: "images/belfast-thumbnail.png",
+        hull: "images/hull-thumbnail.png",
+        dublin: "images/dublin-thumbnail.png",
+        cork: "images/cork-thumbnail.png",
+        liverpool: "images/liverpool-thumbnail.png",
+        isleofman: "images/isleofman-thumbnail.png",
+		nottingham: "images/nottingham-thumbnail.png",
+		dover: "images/dover-thumbnail.png",
+		cambridge: "images/cambridge-thumbnail.png",
+		norwich: "images/norwich-thumbnail.png",
     };
 
+    /* ---------- NORMAL LOCATION MATCHES ---------- */
     const matches = Object.keys(locations).filter(loc =>
         loc.toLowerCase().startsWith(input)
     );
@@ -50,11 +55,36 @@ function showSuggestions() {
         div.appendChild(img);
 
         div.onclick = () => {
-            window.location.href = "location.html?place=" + encodeURIComponent(loc);
+            window.location.href =
+                "location.html?place=" + encodeURIComponent(loc);
         };
 
         box.appendChild(div);
     });
+
+    /* ---------- SECRET CODE ---------- */
+    const SECRET_CODE = "675353"; // change this to your code
+
+    if (input === SECRET_CODE) {
+        const secretDiv = document.createElement("div");
+        secretDiv.className = "suggestion";
+
+        const secretText = document.createElement("span");
+        secretText.textContent = "Midwich";
+
+        const secretImg = document.createElement("img");
+        secretImg.src = "images/midwich-thumbnail.png"; // optional icon
+        secretImg.className = "suggestion-image";
+
+        secretDiv.appendChild(secretText);
+        secretDiv.appendChild(secretImg);
+
+        secretDiv.onclick = () => {
+            window.location.href = "location.html?place=Midwich";
+        };
+
+        box.appendChild(secretDiv);
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -75,32 +105,34 @@ const preview = document.getElementById('preview');
 const locations = document.querySelectorAll('.hoverBox');
 
 const images = {
-    London: 'images/london.png',
-    Edinburgh: 'images/edinburgh.png',
-    Cardiff: 'images/cardiff.png',
-    Leeds: 'images/leeds.png',
-    Bristol: 'images/bristol.png',
-    Plymouth: 'images/plymouth.png',
-    Belfast: 'images/belfast.png',
-    Glasgow: 'images/glasgow.png',
-    Inverness: 'images/inverness.png',
-    Liverpool: 'images/liverpool.png',
-    Birmingham: 'images/birmingham.png',
-    Cork: 'images/cork.png',
-    Dublin: 'images/dublin.png',
-    Newcastle: 'images/newcastle.png',
-    Hull: 'images/hull.png',
-    Cambridge: 'images/cambridge.png',
-    Lerwick: 'images/lerwick.png',
-    Stornoway: 'images/stornoway.png',
-    IsleMan: 'images/isleman.png',
-    Nottingham: 'images/nottingham.png',
-    Dover: 'images/dover.png'
+    london: 'images/london.png',
+    edinburgh: 'images/edinburgh.png',
+    cardiff: 'images/cardiff.png',
+    leeds: 'images/leeds.png',
+    bristol: 'images/bristol.png',
+    plymouth: 'images/plymouth.png',
+    belfast: 'images/belfast.png',
+    glasgow: 'images/glasgow.png',
+    inverness: 'images/inverness.png',
+    liverpool: 'images/liverpool.png',
+    birmingham: 'images/birmingham.png',
+    cork: 'images/cork.png',
+    dublin: 'images/dublin.png',
+    newcastle: 'images/newcastle.png',
+    hull: 'images/hull.png',
+    lerwick: 'images/lerwick.png',
+    stornoway: 'images/stornoway.png',
+    isleofman: 'images/isleofman.png',
+    nottingham: 'images/nottingham.png',
+    dover: 'images/dover.png',
+	cambridge: 'images/cambridge.png',
+	aberdeen: 'images/aberdeen.png',
+	norwich: 'images/norwich.png',
 };
 
 locations.forEach(box => {
     box.addEventListener('mouseenter', () => {
-        const name = box.textContent.trim();
+        const name = box.id.replace("hoverBox-", "").toLowerCase();
         if (images[name]) preview.src = images[name];
         previewContainer.style.display = 'block';
     });

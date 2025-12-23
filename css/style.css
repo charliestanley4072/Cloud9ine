@@ -270,7 +270,7 @@ html, body {
 	top: 42.1%;
 	left: 34.75%;
 }
-#hoverBox-IsleMan {
+#hoverBox-IsleOfMan {
 	top: 58%;
 	left: 36%;
 }
@@ -298,6 +298,19 @@ html, body {
 	top: 83.3%;
 	left: 92%;
 }
+
+.seaLabel {
+    background: none;
+    padding: 5px 15px;
+    font-style: italic;
+    opacity: 0.7;
+    pointer-events: none; /* prevents hover logic entirely */
+	z-index: 2;
+	position: absolute;
+	text-align: center;
+	font-size: 16px;
+}
+
 #hoverBox-North-sea {
 	top: 15%;
 	left: 85%;
@@ -373,7 +386,7 @@ html, body {
 	top: 43%;
 	left: 50%;
 }
-#pin-IsleMan {
+#pin-IsleOfMan {
 	top: 55.2%;
 	left: 48.2%;
 }

@@ -14,10 +14,10 @@ const locations = {
     Leeds: '<h2>Leeds</h2><p>Weather in Leeds:</p>',
     Bristol: '<h2>Bristol</h2><p>Weather in Bristol:</p>',
     Plymouth: '<h2>Plymouth</h2><p>Weather in Plymouth:</p>',
-	Shetland: '<h2>Shetland</h2><p>Weather in Shetland:</p>',
+	Lerwick: '<h2>Lerwick</h2><p>Weather in Lerwick:</p>',
 	Stornoway: '<h2>Stornoway</h2><p>Weather in Stornoway:</p>',
 	Aberdeen: '<h2>Aberdeen</h2><p>Weather in Aberdeen:</p>',
-	Glasgow: '<h2>Glasgow</h2><p>Weather in Shetland:</p>',
+	Glasgow: '<h2>Glasgow</h2><p>Weather in Glasgow:</p>',
 	Inverness: '<h2>Inverness</h2><p>Weather in Inverness:</p>',
 	Newcastle: '<h2>Newcastle</h2><p>Weather in Newcastle:</p>',
 	Belfast: '<h2>Belfast</h2><p>Weather in Belfast:</p>',
@@ -25,13 +25,12 @@ const locations = {
 	Dublin: '<h2>Dublin</h2><p>Weather in Dublin:</p>',
 	Cork: '<h2>Cork</h2><p>Weather in Cork:</p>',
 	Liverpool: '<h2>Liverpool</h2><p>Weather in Liverpool:</p>',
-	IsleMan: '<h2>Isle of Man</h2><p>Weather in the Isle of Man:</p>',
-	Shetland: '<h2>Shetland</h2><p>Weather in Shetland:</p>',
-	Shetland: '<h2>Shetland</h2><p>Weather in Shetland:</p>',
-	Shetland: '<h2>Shetland</h2><p>Weather in Shetland:</p>',
-	Shetland: '<h2>Shetland</h2><p>Weather in Shetland:</p>',
-	Shetland: '<h2>Shetland</h2><p>Weather in Shetland:</p>',
-	Shetland: '<h2>Shetland</h2><p>Weather in Shetland:</p>'
+	IsleOfMan: '<h2>Isle of Man</h2><p>Weather in the Isle of Man:</p>',
+	Nottingham: '<h2>Nottingham</h2><p>Weather in Nottingham:</p>',
+	Dover: '<h2>Dover</h2><p>Weather in Dover:</p>',
+	Cambridge: '<h2>Cambridge</h2><p>Weather in Cambridge:</p>',
+	Norwich: '<h2>Norwich</h2><p>Weather in Norwich:</p>',
+	Midwich: '<h2>Midwich</h2><p>Weather in Midwich:</p>'
 };
 
 
@@ -41,7 +40,24 @@ const titles = {
     Cardiff: 'Weather - Cardiff',
     Leeds: 'Weather - Leeds',
     Bristol: 'Weather - Bristol',
-    Plymouth: 'Weather - Plymouth'
+    Plymouth: 'Weather - Plymouth',
+	Lerwick: 'Weather - Lerwick',
+	Stornoway: 'Weather - Stornoway',
+	Aberdeen: 'Weather - Aberdeen',
+	Glasgow: 'Weather - Glasgow',
+	Inverness: 'Weather - Inverness',
+	Newcastle: 'Weather - Newcastle',
+	Belfast: 'Weather - Belfast',
+	Hull: 'Weather - Hull',
+	Dublin: 'Weather - Dublin',
+	Cork: 'Weather - Cork',
+	Liverpool: 'Weather - Liverpool',
+	IsleOfMan: 'Weather - Isle of Man',
+	Nottingham: 'Weather - Nottingham',
+	Dover: 'Weather - Dover',
+	Cambridge: 'Weather - Cambridge',
+	Norwich: 'Weather - Norwich',
+	Midwich: 'Weather - Midwich'
 };
 
 

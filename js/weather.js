@@ -1,110 +1,129 @@
 // --------------------------------
 // WEATHER.JS — for location.html only
 // --------------------------------
-
-
-const params = new URLSearchParams(window.location.search);
-const place = params.get('place');
-
-
-const locations = {
-    London: '<h2>London</h2><p>Weather in London:</p>',
-    Edinburgh: '<h2>Edinburgh</h2><p>Weather in Edinburgh:</p>',
-    Cardiff: '<h2>Cardiff</h2><p>Weather in Cardiff:</p>',
-    Leeds: '<h2>Leeds</h2><p>Weather in Leeds:</p>',
-    Bristol: '<h2>Bristol</h2><p>Weather in Bristol:</p>',
-    Plymouth: '<h2>Plymouth</h2><p>Weather in Plymouth:</p>',
-	Lerwick: '<h2>Lerwick</h2><p>Weather in Lerwick:</p>',
-	Stornoway: '<h2>Stornoway</h2><p>Weather in Stornoway:</p>',
-	Aberdeen: '<h2>Aberdeen</h2><p>Weather in Aberdeen:</p>',
-	Glasgow: '<h2>Glasgow</h2><p>Weather in Glasgow:</p>',
-	Inverness: '<h2>Inverness</h2><p>Weather in Inverness:</p>',
-	Newcastle: '<h2>Newcastle</h2><p>Weather in Newcastle:</p>',
-	Belfast: '<h2>Belfast</h2><p>Weather in Belfast:</p>',
-	Hull: '<h2>Hull</h2><p>Weather in Hull:</p>',
-	Dublin: '<h2>Dublin</h2><p>Weather in Dublin:</p>',
-	Cork: '<h2>Cork</h2><p>Weather in Cork:</p>',
-	Liverpool: '<h2>Liverpool</h2><p>Weather in Liverpool:</p>',
-	IsleOfMan: '<h2>Isle of Man</h2><p>Weather in the Isle of Man:</p>',
-	Nottingham: '<h2>Nottingham</h2><p>Weather in Nottingham:</p>',
-	Dover: '<h2>Dover</h2><p>Weather in Dover:</p>',
-	Cambridge: '<h2>Cambridge</h2><p>Weather in Cambridge:</p>',
-	Norwich: '<h2>Norwich</h2><p>Weather in Norwich:</p>',
-	Midwich: '<h2>Midwich</h2><p>Weather in Midwich:</p>'
-};
-
-
-const titles = {
-    London: 'Weather - London',
-    Edinburgh: 'Weather - Edinburgh',
-    Cardiff: 'Weather - Cardiff',
-    Leeds: 'Weather - Leeds',
-    Bristol: 'Weather - Bristol',
-    Plymouth: 'Weather - Plymouth',
-	Lerwick: 'Weather - Lerwick',
-	Stornoway: 'Weather - Stornoway',
-	Aberdeen: 'Weather - Aberdeen',
-	Glasgow: 'Weather - Glasgow',
-	Inverness: 'Weather - Inverness',
-	Newcastle: 'Weather - Newcastle',
-	Belfast: 'Weather - Belfast',
-	Hull: 'Weather - Hull',
-	Dublin: 'Weather - Dublin',
-	Cork: 'Weather - Cork',
-	Liverpool: 'Weather - Liverpool',
-	IsleOfMan: 'Weather - Isle of Man',
-	Nottingham: 'Weather - Nottingham',
-	Dover: 'Weather - Dover',
-	Cambridge: 'Weather - Cambridge',
-	Norwich: 'Weather - Norwich',
-	Midwich: 'Weather - Midwich'
-};
-
-
-const weatherInfo = document.getElementById('weather-info');
-
-if (weatherInfo) {
-    weatherInfo.innerHTML = locations[place] || '<p>No location selected.</p>';
-    document.title = titles[place] || "Weather";
-}
-
-
 document.addEventListener('DOMContentLoaded', () => {
-    const toggle = document.getElementById('toggle-dark');
+    const weatherInfo = document.getElementById("weather-info");
+    const rainContainer = document.getElementById("rain-container");
 
-    if (!toggle) {
-        console.error('Toggle element not found!');
+    if (!weatherInfo) return; // Only run on location.html
+
+    // -----------------------------
+    // Locations and coordinates
+    // -----------------------------
+    const locationCoords = {
+        London: { lat: 51.5072, lon: -0.1276 },
+        Edinburgh: { lat: 55.9533, lon: -3.1883 },
+        Cardiff: { lat: 51.4816, lon: -3.1791 },
+        Leeds: { lat: 53.8008, lon: -1.5491 },
+        Bristol: { lat: 51.4545, lon: -2.5879 },
+        Plymouth: { lat: 50.3755, lon: -4.1427 },
+        Belfast: { lat: 54.5973, lon: -5.9301 },
+        Glasgow: { lat: 55.8642, lon: -4.2518 },
+        Inverness: { lat: 57.4778, lon: -4.2247 },
+        Liverpool: { lat: 53.4084, lon: -2.9916 },
+        Birmingham: { lat: 52.4862, lon: -1.8904 },
+        Cork: { lat: 51.8985, lon: -8.4756 },
+        Dublin: { lat: 53.3498, lon: -6.2603 },
+        Newcastle: { lat: 54.9783, lon: -1.6178 },
+        Hull: { lat: 53.7676, lon: -0.3274 },
+        Lerwick: { lat: 60.1550, lon: -1.1450 },
+        Stornoway: { lat: 58.2090, lon: -6.3860 },
+        IsleOfMan: { lat: 54.2361, lon: -4.5481 },
+        Nottingham: { lat: 52.9548, lon: -1.1581 },
+        Dover: { lat: 51.1290, lon: 1.3080 },
+        Cambridge: { lat: 52.2053, lon: 0.1218 },
+        Aberdeen: { lat: 57.1497, lon: -2.0943 },
+        Norwich: { lat: 52.6309, lon: 1.2974 },
+        Midwich: { lat: 51.0000, lon: -1.5000 } // Example secret code
+    };
+
+    // -----------------------------
+    // Parse URL parameter
+    // -----------------------------
+    const params = new URLSearchParams(window.location.search);
+    const rawPlace = params.get("place");
+
+    if (!rawPlace) {
+        weatherInfo.innerHTML = "<p>No location provided.</p>";
         return;
     }
 
-    toggle.addEventListener('change', () => {
-        document.body.classList.toggle('dark-mode', toggle.checked);
-    });
-});
+    const place = Object.keys(locationCoords).find(
+        key => key.toLowerCase() === rawPlace.replace(/\s+/g, "").toLowerCase()
+    );
 
-/*fetch("https://api.open-meteo.com/v1/forecast?latitude=51.5072&longitude=-0.1276&current_weather=true")
-  .then(res => res.json())
-  .then(data => {
-      console.log(data);
-      document.getElementById("weather-info").innerHTML = `
-          <h2>London</h2>
-          <p>Temperature: ${data.current_weather.temperature}°C</p>
-          <p>Wind: ${data.current_weather.windspeed} km/h</p>
-          <p>Weather Code: ${data.current_weather.weathercode}</p>
-      `;
-  });*/
-  
-  
-function createRain() {
-    const rainContainer = document.getElementById("rain-container");
-
-    for (let i = 0; i < 300; i++) {
-        const drop = document.createElement("div");
-        drop.classList.add("drop");
-        drop.style.left = Math.random() * 100 + "vw";        // random horizontal position
-        drop.style.animationDuration = 0.4 + Math.random() * 0.8 + "s";          // random speed
-		drop.style.opacity = Math.random();         // random transparency
-        rainContainer.appendChild(drop);
+    if (!place) {
+        weatherInfo.innerHTML = "<p>Location does not exist.</p>";
+        return;
     }
-}
-createRain();
+
+    const weatherCodes = {
+        0: "Clear sky", 1: "Mainly clear", 2: "Partly cloudy", 3: "Overcast",
+        45: "Fog", 48: "Depositing rime fog", 51: "Light drizzle", 53: "Moderate drizzle",
+        55: "Dense drizzle", 56: "Light freezing drizzle", 57: "Dense freezing drizzle",
+        61: "Slight rain", 63: "Moderate rain", 65: "Heavy rain",
+        66: "Light freezing rain", 67: "Heavy freezing rain",
+        71: "Slight snow fall", 73: "Moderate snow fall", 75: "Heavy snow fall",
+        77: "Snow grains", 80: "Slight rain showers", 81: "Moderate rain showers",
+        82: "Violent rain showers", 85: "Slight snow showers", 86: "Heavy snow showers",
+        95: "Thunderstorm", 96: "Thunderstorm with slight hail", 99: "Thunderstorm with heavy hail"
+    };
+
+    const { lat, lon } = locationCoords[place];
+
+    // -----------------------------
+    // Fetch weather
+    // -----------------------------
+    fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&hourly=relativehumidity_2m`)
+        .then(res => res.json())
+        .then(data => {
+            const code = data.current_weather?.weathercode;
+            
+            // Get current hour humidity
+            const now = new Date();
+            const nowStr = now.toISOString().slice(0, 13) + ":00"; // e.g., "2025-12-29T14:00"
+            const timeIndex = data.hourly.time.findIndex(t => t.startsWith(nowStr));
+            const humidity = timeIndex >= 0 ? data.hourly.relativehumidity_2m[timeIndex] : "N/A";
+
+            weatherInfo.innerHTML = `
+                <h2>${place}</h2>
+                <p>Temperature: ${data.current_weather.temperature}°C</p>
+                <p>Wind: ${data.current_weather.windspeed} km/h</p>
+                <p>Humidity: ${humidity}%</p>
+                <p>Weather: ${weatherCodes[code] || "Unknown"}</p>
+            `;
+            document.title = `Weather - ${place}`;
+
+            // If it’s raining, create rain effect
+            const rainCodes = [51,53,55,56,57,61,63,65,66,67,80,81,82];
+            if (rainCodes.includes(code)) createRain();
+        })
+        .catch(err => {
+            weatherInfo.textContent = "Weather load failed.";
+            console.error(err);
+        });
+
+    // -----------------------------
+    // Rain effect
+    // -----------------------------
+    function createRain() {
+        for (let i = 0; i < 300; i++) {
+            const drop = document.createElement("div");
+            drop.classList.add("drop");
+            drop.style.left = Math.random() * 100 + "vw";
+            drop.style.animationDuration = 0.4 + Math.random() * 0.8 + "s";
+            drop.style.opacity = Math.random();
+            rainContainer.appendChild(drop);
+        }
+    }
+
+    // -----------------------------
+    // Dark mode toggle
+    // -----------------------------
+    const toggle = document.getElementById('toggle-dark');
+    if (toggle) {
+        toggle.addEventListener('change', () => {
+            document.body.classList.toggle('dark-mode', toggle.checked);
+        });
+    }
+});

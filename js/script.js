@@ -32,6 +32,7 @@ function showSuggestions() {
 		dover: "images/dover-thumbnail.png",
 		cambridge: "images/cambridge-thumbnail.png",
 		norwich: "images/norwich-thumbnail.png",
+		harpenden: "images/harpenden-thumbnail.png"
     };
 
     /* ---------- NORMAL LOCATION MATCHES ---------- */

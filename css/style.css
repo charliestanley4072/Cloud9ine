@@ -604,7 +604,7 @@ body.dark-mode #bottom-section {
 /* Make the container relative so the panel is positioned relative to it */
 #container {
     position: relative;
-    width: 100%; /* or fixed width if you want */
+    width: 100%; 
 }
 
 #side-tab {

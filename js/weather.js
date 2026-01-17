@@ -230,3 +230,4 @@ document.addEventListener('DOMContentLoaded', () => {
             sideToggle.textContent = sideTab.classList.contains("open") ? "❯" : "❮";
         });
     }
+});

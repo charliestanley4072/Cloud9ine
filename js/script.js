@@ -1,6 +1,4 @@
-// -----------------------------
-// INDEX.JS — for index.html only
-// -----------------------------
+// SCRIPT.JS — for index.html only
 
 function showSuggestions() {
     const input = document.getElementById("search").value.toLowerCase();
@@ -116,18 +114,12 @@ function showSuggestions() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+
     const toggle = document.getElementById('toggle-dark');
-
-    if (!toggle) {
-        console.error('Toggle element not found!');
-        return;
-    }
-
     toggle.addEventListener('change', () => {
         document.body.classList.toggle('dark-mode', toggle.checked);
     });
-});
+
 
 const previewContainer = document.getElementById('preview-container');
 const preview = document.getElementById('preview');

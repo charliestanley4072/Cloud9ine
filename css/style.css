@@ -58,7 +58,22 @@ body {
 #Cloud9ine-logo,
 #Cloud9ine-image-logo {
   max-height: 100%; /* Scale logos to fit container height */
-  margin-left: 5px;
+  margin-left: 10px;
+}
+
+#information {
+	float: center;
+	width: 100%;
+}
+
+#info {
+	width: 80px;
+	height: 80px;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	border-radius: 100%;
+	position: absolute;
 }
 
 .center-wrapper {
@@ -452,7 +467,7 @@ body {
   margin-top: 0.5vw;
 }
 
-/* Hide default HTML checkbox */
+/* Hide HTML checkbox */
 .switch input {
   opacity: 0;
   width: 0;
@@ -604,7 +619,7 @@ body.dark-mode #bottom-section {
 /* Make the container relative so the panel is positioned relative to it */
 #container {
     position: relative;
-    width: 100%; 
+    width: 100%; /* or fixed width if you want */
 }
 
 #side-tab {
@@ -692,4 +707,40 @@ body.dark-mode #bottom-section {
     height: 100%;
     background-color: rgba(150, 100, 50, 0.23);  /* orange with 30% opacity */
     pointer-events: none; /* clicks pass through */
+}
+
+#day-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, auto); /* auto fits your 115px buttons */
+    column-gap: 135px;   /* ← adjust this freely */
+    row-gap: 18px;      /* rows farther apart */
+    justify-content: start; /* align everything left */
+}
+
+#day-buttons button {
+    width: 115px;
+    height: 60px;
+    border-radius: 8px;
+    border: none;
+    background: #FCBA79;
+    cursor: pointer;
+}
+
+#day-buttons button:hover {
+    background: rgba(255,255,255,1);
+}
+
+#day-buttons .active-day {
+    background: #F59027;
+    font-weight: bold;
+}
+
+#weather-info h2 {
+	text-decoration: underline;
+	font-size: 190%;
+	margin-bottom: -10px;
+}
+#weather-info h3 {
+	text-decoration: underline;
+	font-size: 120%;
 }

@@ -1,26 +1,25 @@
 body {
-	background: #0CC6C6;
-	color: black;
-	margin: 0;
-	transition: background-color 1.5s ease, color 2s ease;
-	overflow-x: hidden;
+	background: #0CC6C6; /*sets background colour*/
+	color: black; /*sets font colour*/
+	margin: 0; /*margin width (px)*/
+	transition: background-color 1.5s ease, color 2s ease; /*transition (attribute, time, type)*/
+	overflow-x: hidden; /*hides overflowing content on x-axis*/
 }
 
 
 #weather { /*'#' targets anything with the id specified after*/
 	font-weight: 600; /*font-weight and font-size change thickness and size of letters*/
-	font-size: 100px;
+	font-size: 100px; /*sets font size*/
 	margin: 0 auto; /*removes automatic margin that causes unnecessary empty space below*/
-	width: fit-content;
 }
 
 #byCharlieStanley {
-	margin-top: -8px;
+	margin-top: -8px; /*removes a portion of the top-margin*/
 }
 
 #mainButtonContainer {
-	position: relative;
-	border-top: 2px solid black;
+	position: relative; /*adjusts element's position relative to its normal position*/
+	border-top: 2px solid black; /*border width and colour*/
 	border-bottom: 2px solid black;
 	margin-top: 18px;
 	width: 100vw; /*vw = viewport width - scales to viewport size*/
@@ -30,7 +29,7 @@ body {
 	justify-content: center;
 	align-items: center; /*centres content on cross axis (vertical here)*/
 	background: white;
-	z-index: 999;
+	z-index: 999; /*changes z-index position*/
 }
 
 #bottom-section {
@@ -47,7 +46,7 @@ body {
 }
 
 #logo {
-	display: flex;
+	display: flex; /*creates flex container to hold items which can be positioned easier*/
 	align-items: center;
 	height: 100%;
 	margin: 0;
@@ -170,7 +169,7 @@ body {
 	color: inherit;
 }
 
-.hoverBox {
+.hoverBox { /*General hoverbox class*/
 	padding: 5px 15px;
 	position: absolute;
 	background-color: black;
@@ -179,11 +178,10 @@ body {
 	font-size: 16px;
 	cursor: pointer;
 	text-align: center;
-	/*transition: all 0.3s ease;*/
 	z-index: 2;
 }
 
-.pin-ring {
+.pin-ring { /*General pin-ring class*/
 	position: absolute;
 	width: 14px;
 	height: 14px;
@@ -194,7 +192,7 @@ body {
 	box-shadow: 0 0 2px 1px rgba(0,0,0,0.6);
 }
 
-.pin-circle {
+.pin-circle { /*General pin class*/
 	position: absolute;
 	width: 10px;
 	height: 10px;
@@ -207,7 +205,7 @@ body {
 	box-shadow: 0 0 2px 1px rgba(0,0,0,0.6);
 }
 
-#map-image-container {
+#map-image-container { 
 	width: 600px;
 	position: relative;
 	margin: 0 auto;
@@ -326,7 +324,7 @@ body {
 	font-size: 16px;
 }
 
-#hoverBox-North-sea {
+#hoverBox-North-sea { /*north sea label*/
 	top: 15%;
 	left: 85%;
 	opacity: 50%;
@@ -432,16 +430,17 @@ body {
 
 
 .hoverBox:hover {
-	text-decoration: underline;
+	text-decoration: underline; /*adds underline effect when hovering over box text*/
 }
 
 #back-btn1 {
-	position: absolute;
+	position: absolute; /*positions it relative to its closest element or parent element*/
 	bottom: 30px;
 	margin-left: 20px;
 }
 
-/*#mainButtonContainer {
+/* my temporary border-box display thing*/
+/*#mainButtonContainer { 
   outline: 2px dashed red;
 }
 #Cloud9ine-logo,
@@ -449,12 +448,8 @@ body {
   outline: 2px dashed blue;
 }*/
 
-
-
-
-
-#weather-info {
-	text-indent: 40px;
+#weather-info { /*location.html info*/
+	text-indent: 40px; 
 	margin-top: 240px;
 }
 
@@ -470,8 +465,6 @@ body {
 /* Hide HTML checkbox */
 .switch input {
   opacity: 0;
-  width: 0;
-  height: 0;
   display: none;
 }
 
@@ -517,7 +510,7 @@ input:checked + .slider:before {
 }
 
 #toggle-1-area{
-	transform: translateX(95.5vw);
+	transform: translateX(95.5vw); /*sets toggle position to right hand side of screen*/
 }
 
 #toggle-word-1 {
@@ -527,14 +520,14 @@ input:checked + .slider:before {
 		
 }
 
-#toggle-1-area-location-page {
+#toggle-1-area-location-page { /*moves dark mode toggle to bottom left on location.html*/
 	transform: translateX(4.5vw);
 	position: absolute;
 	bottom: 30px;
 	margin-left: 91.5vw;
 }
 
-body.dark-mode {
+body.dark-mode { /*the actual changes when the toggle is applied*/
 	background-color: #2F3636;
 	color: white;
 }
@@ -544,7 +537,7 @@ body.dark-mode #bottom-section {
 	color: white;
 }
 
-#precipitation-container {
+#precipitation-container { /*container for snow and rain to fall*/
   position: fixed;
   top: 0;
   left: 0;
@@ -554,7 +547,7 @@ body.dark-mode #bottom-section {
   z-index: 9999;
 }
 
-.drop {
+.drop { /*shape, colour and animation of raindrops*/
   position: absolute;
   width: 4px;
   height: 35px;
@@ -564,7 +557,7 @@ body.dark-mode #bottom-section {
   border-radius: 6px;
 }
 
-.snowflake {
+.snowflake { /*shape, colour and animation of snowflakes*/
   position: absolute;
   width: 10px;
   height: 10px;
@@ -575,13 +568,13 @@ body.dark-mode #bottom-section {
   opacity: 0.7;
 }
 
-@keyframes fall {
+@keyframes fall { /*uses keyframe animation to specify where the raindrops fall (110vh to ensure whole raindrops leave screen*/
   to {
     transform: translateY(110vh);
   }
 }
 
-@keyframes snowfall {
+@keyframes snowfall { /*snowflakes travel first diagonally left, then diagonally right, to make it look like they are swaying*/
 	0% {
 		transform: translateX(0) translateY(-10vh);
 	}
@@ -622,8 +615,8 @@ body.dark-mode #bottom-section {
     width: 100%; /* or fixed width if you want */
 }
 
-#side-tab {
-    position: fixed;
+#side-tab { /*tab with the day forecast menu*/
+    position: fixed; /*fixed = in same place on screen no matter what*/
     top: 55%;
     right: -600px; /* fully hidden */
     transform: translateY(-50%);
@@ -638,7 +631,7 @@ body.dark-mode #bottom-section {
 	padding-left: 20px;
 }
 
-@keyframes slideBounce {
+@keyframes slideBounce { /*first 70% of animation, panel travels 600px left, then it slows down, then fially moves back 10px to make it appear to bounce*/
     0% { right: -600px; }
     70% { right: 0px; }
 	80% {right: 10px; }
@@ -646,7 +639,7 @@ body.dark-mode #bottom-section {
     100% { right: -10px; }
 }
 
-#side-tab.open {
+#side-tab.open { /*triggers animation "slideBounce" (defined earlier) when tab is opened*/
     animation: slideBounce 0.4s forwards;
 }
 
@@ -692,7 +685,7 @@ body.dark-mode #bottom-section {
 	top: 140px;
 }
 
-#wide-img-container img {
+#wide-img-container img { /*!important prioritises these attributes over anything else - this fixed a bug where they weren't prioritised*/
     width: 100% !important;   /* fill container width */
     height: 100% !important;  /* fill container height */
     object-fit: fill !important; /* stretch/squash to fit */
@@ -705,16 +698,16 @@ body.dark-mode #bottom-section {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(150, 100, 50, 0.23);  /* orange with 30% opacity */
-    pointer-events: none; /* clicks pass through */
+    background-color: rgba(150, 100, 50, 0.23);  /*orange with 30% opacity*/
+    pointer-events: none; /*clicks pass through*/
 }
 
 #day-buttons {
     display: grid;
-    grid-template-columns: repeat(2, auto); /* auto fits your 115px buttons */
-    column-gap: 135px;   /* ← adjust this freely */
-    row-gap: 18px;      /* rows farther apart */
-    justify-content: start; /* align everything left */
+    grid-template-columns: repeat(2, auto); /*auto fits 115px buttons*/
+    column-gap: 135px;   /*adjusts gap between columns*/
+    row-gap: 18px;      /* rows further apart */
+    justify-content: start; /*align everything at start (left)*/
 }
 
 #day-buttons button {
@@ -743,4 +736,28 @@ body.dark-mode #bottom-section {
 #weather-info h3 {
 	text-decoration: underline;
 	font-size: 120%;
+}
+
+#hourly-forecast {
+    margin-top: 30px;
+    padding: 10px 0;
+    display: flex;
+    overflow-x: auto;
+    gap: 12px;
+    scroll-snap-type: x mandatory; /*allows you to use sideways scroll bar*/
+}
+
+.hour-block {
+    min-width: 80px;
+    padding: 10px;
+    background: rgba(255,255,255,0.85);
+    border-radius: 8px;
+    text-align: center;
+    scroll-snap-align: start;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.hour-block p {
+    margin: 4px 0;
+    font-size: 14px;
 }

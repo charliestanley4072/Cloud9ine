@@ -1,8 +1,6 @@
-// --------------------------------
 // WEATHER.JS — for location.html only
-// --------------------------------
-document.addEventListener('DOMContentLoaded', () => {
-
+document.addEventListener('DOMContentLoaded', () => { //Ensures page content has loaded before loading js
+	/*defines all variables that use a similar name from html pages at start to make page cleaner*/
     const weatherInfo = document.getElementById("weather-info");
     const precipitationContainer = document.getElementById("precipitation-container");
     const buttonsContainer = document.getElementById("day-buttons");
@@ -70,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const rawPlace = params.get("place");
     const dayIndex = parseInt(params.get("day") || "0", 10);
 
-    if (!rawPlace) {
+    if (!rawPlace) { /*if there is no location (specified with ? at end of URL) after URL then display this error*/
         weatherInfo.innerHTML = "<p>No location provided.</p>";
         return;
     }
@@ -79,12 +77,12 @@ document.addEventListener('DOMContentLoaded', () => {
         key => key.toLowerCase().replace(/_/g, '') === rawPlace.toLowerCase().replace(/_/g, '')
     );
 
-    if (!place) {
+    if (!place) { /*if there is no matching location to the one provided then this error message shows up*/
         weatherInfo.innerHTML = "<p>Location does not exist.</p>";
         return;
     }
 
-    const weatherCodes = {
+    const weatherCodes = { /*converts weather codes into real information*/
         0: "Clear sky", 1: "Mainly clear", 2: "Partly cloudy", 3: "Overcast",
         45: "Fog", 48: "Depositing rime fog", 51: "Light drizzle", 53: "Moderate drizzle",
         55: "Dense drizzle", 56: "Light freezing drizzle", 57: "Dense freezing drizzle",
@@ -96,17 +94,17 @@ document.addEventListener('DOMContentLoaded', () => {
         95: "Thunderstorm", 96: "Thunderstorm with slight hail", 99: "Thunderstorm with heavy hail"
     };
 
-    const rainCodes = [51,53,55,56,57,61,63,65,66,67,80,81,82];
-    const snowCodes = [71,73,75,77,85,86];
+    const rainCodes = [51,53,55,56,57,61,63,65,66,67,80,81,82]; /*weather codes involving rain*/
+    const snowCodes = [71,73,75,77,85,86]; /*weather codes involving snow*/
 
     const { lat, lon } = locationCoords[place];
 
-    // Fetch weather
+    // Fetch weather - url is designed to allow weather information to be taken hourly, as well as daily
     fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&hourly=temperature_2m,weathercode,relativehumidity_2m,windspeed_10m&daily=weathercode,temperature_2m_max,temperature_2m_min&forecast_days=8&timezone=auto`)
         .then(res => res.json())
         .then(data => {
 			
-            let code, humidity, wind;
+            let code, humidity, wind; /*declares 9but does not assign) new variables that can be used later*/
             if (dayIndex === 0) {
                 // TODAY
                 code = data.current_weather?.weathercode;
@@ -230,4 +228,40 @@ document.addEventListener('DOMContentLoaded', () => {
             sideToggle.textContent = sideTab.classList.contains("open") ? "❯" : "❮";
         });
     }
+	
+	function renderHourly(data, dayIndex) {
+		const container = document.getElementById("hourly-forecast");
+		if (!container) return;
+
+		container.innerHTML = "";
+
+		// Determine which 24 hours to show
+		const start = dayIndex * 24;
+		const end = start + 24;
+
+		for (let i = start; i < end; i++) {
+			const time = new Date(data.hourly.time[i]);
+			const hour = time.getHours().toString().padStart(2, "0");
+
+			const temp = data.hourly.temperature_2m[i];
+			const humidity = data.hourly.relativehumidity_2m[i];
+			const wind = data.hourly.windspeed_10m[i];
+			const code = data.hourly.weathercode[i];
+
+			const block = document.createElement("div");
+			block.className = "hour-block";
+
+			block.innerHTML = `
+				<p><strong>${hour}:00</strong></p>
+				<p>${temp}°C</p>
+				<p>${weatherCodes[code] || "?"}</p>
+				<p>${wind} km/h</p>
+				<p>${humidity}%</p>
+			`;
+
+			container.appendChild(block);
+		}
+	}
+
 });
+

@@ -1,4 +1,6 @@
-// SCRIPT.JS — for index.html only
+// -----------------------------
+// INDEX.JS — for index.html only
+// -----------------------------
 
 function showSuggestions() {
     const input = document.getElementById("search").value.toLowerCase();
@@ -162,3 +164,4 @@ locations.forEach(box => {
         previewContainer.style.display = 'none';
     });
 });
+

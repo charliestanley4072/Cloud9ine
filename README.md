@@ -32,6 +32,7 @@ Extra:
 - When trying to access data about a particular location, you could type in the name of the place, followed by the day (starting from day 0 (current day)) at the end of the URL using the following template: "place=x&day=y", and an appropriate error message will be displayed if the location does not exist, was not provided, or cannot be accessed.
 
 
+
 Websites I used (ranked from most --> least important):
 - youtube.com
 - open-meteo.com

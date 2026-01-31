@@ -6,16 +6,32 @@ body {
 	overflow-x: hidden; /*hides overflowing content on x-axis*/
 }
 
-
-#weather { /*'#' targets anything with the id specified after*/
-	font-weight: 600; /*font-weight and font-size change thickness and size of letters*/
-	font-size: 100px; /*sets font size*/
-	margin: 0 auto; /*removes automatic margin that causes unnecessary empty space below*/
+#h1-weather-wrapper {
+	display: flex;      
+    align-items: center;        
+    justify-content: center;    
+    gap: -100px;
+    padding: 0 20px;             
 }
 
-#byCharlieStanley {
-	margin-top: -8px; /*removes a portion of the top-margin*/
+.side-image { 
+	width: 200px; 
+	height: auto;
+	margin: 0 10px; /* small spacing on each side */ 
 }
+
+.side-image {
+    transform: translateY(45px); /* adjust the number until it looks right */
+}
+
+
+	
+#weather {
+    font-weight: 600;
+    font-size: 100px;
+    margin: 0;
+}
+
 
 #mainButtonContainer {
 	position: relative; /*adjusts element's position relative to its normal position*/
@@ -761,3 +777,32 @@ body.dark-mode #bottom-section {
     margin: 4px 0;
     font-size: 14px;
 }
+
+#info-html-cloud9ine-title {
+	font-size: 85px;
+	margin-top: -26px;
+}
+
+#goals-box {
+	display: flex;
+	width: 600px;    
+    padding: 10px;             
+    border: 2px solid #333;    
+    background-color: #9AE3DB;
+    word-wrap: break-word;     /* break long words if needed */
+	text-align: left;
+}
+
+#why-make-cloud9ine {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 1000px;
+}
+
+#back-btn2 {
+	position: absolute; /*positions it relative to its closest element or parent element*/
+	bottom: -80px;
+	margin-left: 20px;
+}
+

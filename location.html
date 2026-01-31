@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -16,14 +16,17 @@
 		<div id="mainButtonContainer">
 			<a href="index.html" id="logo">
 				<div id="logo" style="cursor:pointer;">
-					<img id="Cloud9ine-image-logo" src="images/Cloud9ine-favicon.png"> 
+					<img id="Cloud9ine-image-logo" src="images/Cloud9ine-favicon.png">
 					<img id="Cloud9ine-logo" src="images/Cloud9ine-logo.png">
 				</div>
+			</a>
+			<a href="info.html" id="info">
+				<img src="images/information.png" alt="information" id="information">
 			</a>
 				<div id="searchBarContainer">
 					<img src="images/search-icon.png" width="35px" id="search-icon">
 					<div id="searchBar">
-						<input type="text" id="search" placeholder="Search location..." oninput="showSuggestions()">
+						<input type="text" id="search" placeholder="Search location..." oninput="showSuggestions()" autocomplete="on">
 						<div id="suggestions"></div>
 					</div>
 				</div>

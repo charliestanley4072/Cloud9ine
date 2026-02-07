@@ -17,13 +17,9 @@ body {
 .side-image { 
 	width: 200px; 
 	height: auto;
-	margin: 0 10px; /* small spacing on each side */ 
+	margin: 0 10px; /* small spacing on each side */
+	transform: translateY(45px);
 }
-
-.side-image {
-    transform: translateY(45px); /* adjust the number until it looks right */
-}
-
 
 	
 #weather {
@@ -40,12 +36,15 @@ body {
 	margin-top: 18px;
 	width: 100vw; /*vw = viewport width - scales to viewport size*/
 	height: 120px;
-	gap: 20px;
+
 	display: flex; /*automatically arranges child elements in row or column*/
 	justify-content: center;
 	align-items: center; /*centres content on cross axis (vertical here)*/
 	background: white;
 	z-index: 999; /*changes z-index position*/
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 20px;
 }
 
 #bottom-section {
@@ -89,7 +88,9 @@ body {
 	justify-content: center;
 	border-radius: 100%;
 	position: absolute;
+	cursor: pointer;
 }
+
 
 .center-wrapper {
 	display: flex;
@@ -628,13 +629,13 @@ body.dark-mode #bottom-section {
 /* Make the container relative so the panel is positioned relative to it */
 #container {
     position: relative;
-    width: 100%; /* or fixed width if you want */
+    width: 100%;
 }
 
 #side-tab { /*tab with the day forecast menu*/
     position: fixed; /*fixed = in same place on screen no matter what*/
     top: 55%;
-    right: -600px; /* fully hidden */
+    right: -600px;
     transform: translateY(-50%);
     width: 600px;
     height: 400px;
@@ -672,7 +673,7 @@ body.dark-mode #bottom-section {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    z-index: 5; /* above the panel */
+    z-index: 999; /* above the panel */
     border-radius: 10px 0 0 10px;
     font-size: 20px;
     user-select: none;
@@ -721,9 +722,9 @@ body.dark-mode #bottom-section {
 #day-buttons {
     display: grid;
     grid-template-columns: repeat(2, auto); /*auto fits 115px buttons*/
-    column-gap: 135px;   /*adjusts gap between columns*/
-    row-gap: 18px;      /* rows further apart */
-    justify-content: start; /*align everything at start (left)*/
+    column-gap: 135px;  
+    row-gap: 18px;      
+    justify-content: start; 
 }
 
 #day-buttons button {
@@ -804,5 +805,50 @@ body.dark-mode #bottom-section {
 	position: absolute; /*positions it relative to its closest element or parent element*/
 	bottom: -80px;
 	margin-left: 20px;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px; 
+  transition: 0.5s; 
+  z-index: 999;
+}
+
+.sidenav a, .sidenav h1 {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+
+/* On smaller screens, where height is less than 450px, this changes the style of the sidenav*/
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+#open-side-menu:hover {
+	cursor: pointer;
 }
 

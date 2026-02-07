@@ -22,9 +22,9 @@
 						<img id="Cloud9ine-logo" src="images/Cloud9ine-logo.png">
 					</div>
 				</a>
-				<a href="info.html" id="info">
+				<div id="info" onclick="openNav()">
 					<img src="images/information.png" alt="information" id="information">
-				</a>
+				</div>
 					<div id="searchBarContainer">
 						<img src="images/search-icon.png" width="35px" id="search-icon">
 						<div id="searchBar">
@@ -256,31 +256,13 @@
 		<div class="spacer"></div>
 		<div class="spacer"></div>
 
-		
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		<div id="mySidenav" class="sidenav">
+		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		  <h1><b><u>MENU</u></b></h1>
+		  <a href="info.html">About</a>
+		  <a href="#">Services</a>
+		  <a href="#">Contact</a>
+		</div>
 
 
 		<div id="bottom-section">
@@ -290,6 +272,7 @@
 	</main>
 
 	<script src="js/script.js"></script>
+	<script src="js/weather.js"></script>
 </body>
 
 
